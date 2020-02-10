@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "初期化します"
+
 DATA=data/
 DIST=dist/
 TMP=tmp/
@@ -9,29 +11,29 @@ PICKLE=pickle/
 TF_IDF=tf_idf/
 DATA_ZIP=data.zip
 
-if [[ -d VENV ]]; then
+if [[ -e $VENV ]]; then
     echo "${VENV}は存在します"
-else:
-    python -m venv VENV
+else
+    python -m venv $VENV
 fi
 
-if [[ -d DATA ]]; then
+if [[ -e $DATA ]]; then
     echo "${DATA}は存在します"
-else:
-    unzip DATA_ZIP
+else
+    unzip $DATA_ZIP
 fi
 
-if [[ -d DIST ]]; then
+if [[ -e $DIST ]]; then
     echo "${DIST}は存在します"
-else:
-    mkdir DIST
+else
+    mkdir $DIST
 fi
 
-if [[ -d TMP ]]; then
+if [[ -e $TMP ]]; then
     echo "${TMP}は存在します"
-else:
-    mkdir TMP
-    mkdir TMP + CLUSTERS
-    mkdir TMP + PICKLE
-    mkdir TMP + TF_IDF
+else
+    mkdir $TMP
+    mkdir "${TMP}${CLUSTERS}"
+    mkdir "${TMP}${PICKLE}"
+    mkdir "${TMP}${TF_IDF}"
 fi
