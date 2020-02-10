@@ -9,19 +9,27 @@ PICKLE=pickle/
 TF_IDF=tf_idf/
 DATA_ZIP=data.zip
 
-if [[ -ne VENV ]]; then
+if [[ -d VENV ]]; then
+    echo "${VENV}は存在します"
+else:
     python -m venv VENV
 fi
 
-if [[ -ne DATA ]]; then
+if [[ -d DATA ]]; then
+    echo "${DATA}は存在します"
+else:
     unzip DATA_ZIP
 fi
 
-if [[ -ne DIST ]]; then
+if [[ -d DIST ]]; then
+    echo "${DIST}は存在します"
+else:
     mkdir DIST
 fi
 
-if [[ -ne TMP ]]; then
+if [[ -d TMP ]]; then
+    echo "${TMP}は存在します"
+else:
     mkdir TMP
     mkdir TMP + CLUSTERS
     mkdir TMP + PICKLE
