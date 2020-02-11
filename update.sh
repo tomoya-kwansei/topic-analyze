@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-gshuf -n 100 data/sources.txt > data/sources-mini.txt
+gshuf -n 50 data/sources.txt > data/sources-mini.txt
