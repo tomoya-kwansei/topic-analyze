@@ -58,7 +58,7 @@ class Book:
             self._sentences = list(chunks(words, _sentence_num))
 
     def windowed(self, segment_num=200, window_num=10000):
-        words = self._content.split(' ')
+        words = self._content.split()
         indexes = np.array_split(np.array(range(len(words) - window_num)), segment_num - 1)
         tops = [t[0] for t in indexes]
         for top in tops:
